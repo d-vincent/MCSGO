@@ -1,0 +1,150 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.madisonbaseball.mba.MadisonInfoFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.daimajia.swipe.SwipeLayout
+        android:id="@+id/hospitalSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_1"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_1"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_1"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+
+            android:textSize="22sp"
+            android:paddingLeft="32dp"
+            android:gravity="center_vertical"
+            android:text="Holiday Inn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_below="@+id/hospitalSwipe"
+        android:id="@+id/fireSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_2"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_2"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_2"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="32dp"
+            android:text="Hampton Inn"
+            android:textSize="22sp" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_below="@+id/fireSwipe"
+        android:id="@+id/policeSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_3"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_3"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_3"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:paddingLeft="32dp"
+            android:gravity="center_vertical"
+            android:text="Best Western"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+</RelativeLayout>

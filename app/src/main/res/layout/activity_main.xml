@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fitsSystemWindows="true"
+    tools:context="org.madisonbaseball.mba.MainActivity">
+
+    
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.aurelhubert.ahbottomnavigation.AHBottomNavigation
+        android:id="@+id/bottom_navigation_container"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"/>
+
+
+    <FrameLayout
+        android:layout_above="@+id/bottom_nav"
+        android:id="@+id/container"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+
+   <LinearLayout
+       android:id="@+id/bottom_nav"
+       android:weightSum="5"
+       android:orientation="horizontal"
+       android:background="@color/colorPrimary"
+       android:layout_alignParentBottom="true"
+       android:layout_width="match_parent"
+       android:layout_height="56dp">
+
+       <ImageView
+           android:id="@+id/dining"
+           android:src="@drawable/forward"
+           android:layout_weight="1"
+           android:layout_width="1dp"
+           android:layout_height="match_parent" />
+       <ImageView
+           android:id="@+id/bracket"
+           android:src="@drawable/catalogs"
+           android:layout_weight="1"
+           android:layout_width="1dp"
+           android:layout_height="match_parent" />
+       <ImageView
+           android:id="@+id/weather"
+           android:src="@drawable/scores"
+           android:layout_weight="1"
+           android:layout_width="1dp"
+           android:layout_height="match_parent" />
+       <ImageView
+           android:id="@+id/hotels"
+           android:src="@drawable/places"
+           android:layout_weight="1"
+           android:layout_width="1dp"
+           android:layout_height="match_parent" />
+       <ImageView
+           android:id="@+id/madison_info"
+           android:src="@drawable/inow"
+           android:layout_weight="1"
+           android:layout_width="1dp"
+           android:layout_height="match_parent" />
+
+
+
+   </LinearLayout>
+    
+
+</RelativeLayout>
