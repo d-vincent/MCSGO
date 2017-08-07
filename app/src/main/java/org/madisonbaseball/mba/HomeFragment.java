@@ -67,15 +67,18 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         homeWebview = (WebView) view.findViewById(R.id.home_webview);
+
+        homeWebview.setWebViewClient(new WebViewClient());
         homeWebview.getSettings().setJavaScriptEnabled(true);
-        homeWebview.loadUrl( "http://madisonbaseball.org");
+        homeWebview.loadUrl("file:///android_asset/socialmedia.html");
+
 
 
         weatherWebview = (WebView)view.findViewById(R.id.weather_webview);
         weatherWebview.getSettings().setJavaScriptEnabled(true);
         weatherWebview.getSettings().setDomStorageEnabled(true);
         weatherWebview.setWebViewClient(new WebViewClient());
-        weatherWebview.loadUrl("https://weather.com/weather/today/l/USAL0342:1:US");
+        weatherWebview.loadUrl("https://sis.madisoncity.k12.al.us");
 
         bracketWebview = (WebView)view.findViewById(R.id.bracket_webview);
         bracketWebview.loadUrl("google.com");
@@ -84,7 +87,7 @@ public class HomeFragment extends Fragment {
         diningWebview = (WebView)view.findViewById(R.id.dining_webview);
         diningWebview.getSettings().setJavaScriptEnabled(true);
         diningWebview.setWebViewClient(new WebViewClient());
-        diningWebview.loadUrl("https://yelp.com/search?find_desc=&amp;find_loc=Madison%2C+AL&amp;ns=1");
+        diningWebview.loadUrl("https://scorestream.com/widgets/scoreboards/vert?userWidgetId=12324");
 
         loadNewPage(mState);
         return view;

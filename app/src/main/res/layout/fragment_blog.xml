@@ -10,4 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
+    <ScrollView
+        android:visibility="gone"
+        android:background="@color/white"
+        android:id="@+id/holder"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:padding="16dp"
+        android:visibility="visible"
+        android:id="@+id/content_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    </ScrollView>
+
 </FrameLayout>

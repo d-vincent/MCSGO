@@ -9,60 +9,34 @@
 
 
     <LinearLayout
-        android:orientation="vertical"
-        android:weightSum="4"
+        android:background="@color/white"
+        android:id="@+id/toggle_layout"
+        android:padding="16dp"
+        android:orientation="horizontal"
+        android:weightSum="2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <TextView
+        android:layout_height="wrap_content">
 
-            android:id="@+id/seven"
-            android:textSize="48sp"
-            android:textColor="#76031D"
-            android:background="#5F6575"
-            android:gravity="center"
+        <ImageView
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:text="7U" />
+            android:id="@+id/highschool"
+            android:src="@drawable/hsactive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/nine"
-            android:textSize="48sp"
-            android:textColor="#76031D"
-            android:background="#5F6575"
-            android:gravity="center"
-            android:text="9U"
+        <ImageView
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
-
-        <TextView
-            android:id="@+id/eleven"
-            android:textSize="48sp"
-            android:textColor="#76031D"
-            android:background="#5F6575"
-            android:gravity="center"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:text="11U" />
-
-        <TextView
-            android:id="@+id/fourteen"
-            android:textSize="48sp"
-            android:textColor="#76031D"
-            android:background="#5F6575"
-            android:gravity="center"
-            android:text="14U"
-            android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp" />
+            android:id="@+id/middle_school"
+            android:src="@drawable/ms_inactive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
     <WebView
+        android:layout_below="@id/toggle_layout"
         android:id="@+id/bracket_webview"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

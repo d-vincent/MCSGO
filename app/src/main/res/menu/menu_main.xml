@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/info"
-        android:icon="@drawable/tournamentinfo_44x44"
+        android:icon="@drawable/ic_book_open_variant_grey600_48dp"
         android:title="Text to be seen by user"
         app:showAsAction="always"
         android:orderInCategory="0"/>
