@@ -1,15 +1,37 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     android:layout_height="match_parent"
     tools:context="org.madisonbaseball.mba.MadisonInfoFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:paddingLeft="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:text="District Locations"
+                android:background="#677787"
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+
+
     <com.daimajia.swipe.SwipeLayout
         android:id="@+id/hospitalSwipe"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
-
+        android:layout_height="56dp"
+        >
 
         <LinearLayout
             android:layout_width="300dp"
@@ -44,19 +66,26 @@
         <TextView
 
             android:textSize="22sp"
-            android:paddingLeft="32dp"
             android:gravity="center_vertical"
-            android:text="Holiday Inn"
+            android:text="Central Office"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
+
+
     </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
 
     <com.daimajia.swipe.SwipeLayout
         android:layout_below="@+id/hospitalSwipe"
         android:id="@+id/fireSwipe"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="56dp">
 
 
         <LinearLayout
@@ -94,17 +123,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
-            android:paddingLeft="32dp"
-            android:text="Hampton Inn"
+            android:text="Central Office Annex"
             android:textSize="22sp" />
 
     </com.daimajia.swipe.SwipeLayout>
 
-    <com.daimajia.swipe.SwipeLayout
-        android:layout_below="@+id/fireSwipe"
-        android:id="@+id/policeSwipe"
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
         android:layout_width="match_parent"
-        android:layout_height="100dp">
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
 
 
         <LinearLayout
@@ -139,12 +171,707 @@
 
         <TextView
             android:textSize="22sp"
-            android:paddingLeft="32dp"
             android:gravity="center_vertical"
-            android:text="Best Western"
+            android:text="Transportation Depot"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
     </com.daimajia.swipe.SwipeLayout>
 
-</RelativeLayout>
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+            <TextView
+                android:paddingLeft="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:text="High School Locations"
+                android:background="#677787"
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_4"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_4"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_4"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="The Academy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_5"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_5"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_5"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Bob Jones"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_6"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_6"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_6"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="James Clemons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+            <TextView
+                android:paddingLeft="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:text="Middle School Locations"
+                android:background="#677787"
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_7"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_7"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_7"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Discovery"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_8"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_8"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_8"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Liberty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+            <TextView
+                android:paddingLeft="16dp"
+                android:textSize="18sp"
+                android:textColor="@color/white"
+                android:gravity="center_vertical"
+                android:text="Elementary School Locations"
+                android:background="#677787"
+                android:layout_width="match_parent"
+                android:layout_height="28dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_9"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_9"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_9"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Columbia"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_10"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_10"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_10"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Heritage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_11"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_11"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_11"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Horizon"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_12"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_12"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_12"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Madison"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_13"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_13"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_13"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Mill Creek"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_14"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_14"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_14"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Pre-K Center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_15"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_15"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_15"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="Rainbow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+    <com.daimajia.swipe.SwipeLayout
+        android:layout_below="@+id/fireSwipe"
+        android:id="@+id/policeSwipe"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+
+        <LinearLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/phone_16"
+                android:background="#EE3F3B"
+                android:text="Phone"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/web_16"
+                android:background="#1E82A9"
+                android:text="Web"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+            <TextView
+                android:gravity="center"
+                android:textColor="#FFFFFF"
+                android:id="@+id/map_16"
+                android:background="#3F6A56"
+                android:text="Map"
+                android:layout_width="100dp"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <TextView
+            android:textSize="22sp"
+            android:gravity="center_vertical"
+            android:text="West Madison"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.daimajia.swipe.SwipeLayout>
+
+    <TextView
+        android:background="#677787"
+        android:layout_gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="1dp" />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

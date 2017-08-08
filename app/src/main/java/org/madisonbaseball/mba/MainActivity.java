@@ -1,5 +1,6 @@
 package org.madisonbaseball.mba;
 
+import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
@@ -12,22 +13,22 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
-import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
-
 public class MainActivity extends AppCompatActivity {
 
     Fragment mFragment;
-    ImageView bracket;
-    ImageView hotels;
-    ImageView dining;
-    ImageView madisonInfo;
-    ImageView weather;
+    ImageView catalogs;
+    ImageView places;
+    ImageView forward;
+    ImageView iNow;
+    ImageView scores;
+
+    Toolbar toolbar;
+    Menu menu;
 
     @Override
     public void onBackPressed() {
-        if (mFragment instanceof BracketFragment){
-            ((BracketFragment) mFragment).mWebview.setVisibility(View.GONE);
+        if (mFragment instanceof BlogFragment){
+            ((BlogFragment) mFragment).holderview.setVisibility(View.GONE);
             return;
         }
         super.onBackPressed();
@@ -38,12 +39,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setNavigationIcon(R.drawable.home);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.home_blue);
+        toolbar.setTitle("");
 
-        Drawable icon = toolbar.getNavigationIcon();
-        icon.setColorFilter(new
-                PorterDuffColorFilter(getResources().getColor(R.color.unselected),PorterDuff.Mode.MULTIPLY));
+//        Drawable icon = toolbar.getNavigationIcon();
+//        icon.setColorFilter(new
+//                PorterDuffColorFilter(getResources().getColor(R.color.unselected),PorterDuff.Mode.MULTIPLY));
 
         setSupportActionBar(toolbar);
 
@@ -51,29 +53,31 @@ public class MainActivity extends AppCompatActivity {
         mFragment = fragment;
         getSupportFragmentManager().beginTransaction().replace(R.id.container,fragment).commit();
 
-        bracket = (ImageView)findViewById(R.id.bracket);
-        hotels = (ImageView)findViewById(R.id.hotels);
-        dining = (ImageView)findViewById(R.id.dining);
-        madisonInfo = (ImageView)findViewById(R.id.madison_info);
-        weather = (ImageView)findViewById(R.id.weather);
+        catalogs = (ImageView)findViewById(R.id.bracket);
+        places = (ImageView)findViewById(R.id.hotels);
+        forward= (ImageView)findViewById(R.id.dining);
+        iNow = (ImageView)findViewById(R.id.madison_info);
+        scores = (ImageView)findViewById(R.id.weather);
 
-        weather.setColorFilter(getResources().getColor(R.color.unselected));
-        madisonInfo.setColorFilter(getResources().getColor(R.color.unselected));
-        dining.setColorFilter(getResources().getColor(R.color.unselected));
-        hotels.setColorFilter(getResources().getColor(R.color.unselected));
-        bracket.setColorFilter(getResources().getColor(R.color.unselected));
+        scores.setColorFilter(getResources().getColor(R.color.unselected));
+        iNow.setColorFilter(getResources().getColor(R.color.unselected));
+        forward.setColorFilter(getResources().getColor(R.color.unselected));
+        places.setColorFilter(getResources().getColor(R.color.unselected));
+        catalogs.setColorFilter(getResources().getColor(R.color.unselected));
 
 
-        bracket.setOnClickListener(new View.OnClickListener() {
+        catalogs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                bracket.setColorFilter(getResources().getColor(R.color.colorAccent));
-                madisonInfo.setColorFilter(getResources().getColor(R.color.unselected));
-                dining.setColorFilter(getResources().getColor(R.color.unselected));
-                hotels.setColorFilter(getResources().getColor(R.color.unselected));
-                weather.setColorFilter(getResources().getColor(R.color.unselected));
-                if(mFragment instanceof PDFragment || mFragment instanceof MadisonInfoFragment || mFragment instanceof HotelFragment || mFragment instanceof HomeFragment) {
+                menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_book_open_variant_grey600_48dp));
+                toolbar.setNavigationIcon(R.drawable.home);
+                catalogs.setColorFilter(getResources().getColor(R.color.colorAccent));
+                iNow.setColorFilter(getResources().getColor(R.color.unselected));
+                forward.setColorFilter(getResources().getColor(R.color.unselected));
+                places.setColorFilter(getResources().getColor(R.color.unselected));
+                scores.setColorFilter(getResources().getColor(R.color.unselected));
+                if(mFragment instanceof LinksFragment || mFragment instanceof MadisonInfoFragment || mFragment instanceof HotelFragment || mFragment instanceof HomeFragment || mFragment instanceof BlogFragment) {
                     BracketFragment bracketFragment = BracketFragment.newInstance();
                     mFragment = bracketFragment;
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, bracketFragment).commit();
@@ -81,15 +85,17 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        hotels.setOnClickListener(new View.OnClickListener() {
+        places.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                hotels.setColorFilter(getResources().getColor(R.color.colorAccent));
-                madisonInfo.setColorFilter(getResources().getColor(R.color.unselected));
-                dining.setColorFilter(getResources().getColor(R.color.unselected));
-                weather.setColorFilter(getResources().getColor(R.color.unselected));
-                bracket.setColorFilter(getResources().getColor(R.color.unselected));
+                menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_book_open_variant_grey600_48dp));
+                toolbar.setNavigationIcon(R.drawable.home);
+                places.setColorFilter(getResources().getColor(R.color.colorAccent));
+                iNow.setColorFilter(getResources().getColor(R.color.unselected));
+                forward.setColorFilter(getResources().getColor(R.color.unselected));
+                scores.setColorFilter(getResources().getColor(R.color.unselected));
+                catalogs.setColorFilter(getResources().getColor(R.color.unselected));
                 if (!(mFragment instanceof HotelFragment)) {
                     HotelFragment hotelFragment = HotelFragment.newInstance();
                     mFragment = hotelFragment;
@@ -98,53 +104,40 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-        dining.setOnClickListener(new View.OnClickListener() {
+        forward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                dining.setColorFilter(getResources().getColor(R.color.colorAccent));
-                madisonInfo.setColorFilter(getResources().getColor(R.color.unselected));
-                weather.setColorFilter(getResources().getColor(R.color.unselected));
-                hotels.setColorFilter(getResources().getColor(R.color.unselected));
-                bracket.setColorFilter(getResources().getColor(R.color.unselected));
+                menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_book_open_variant_grey600_48dp));
+                toolbar.setNavigationIcon(R.drawable.ic_refresh_grey600_48dp);
 
+                forward.setColorFilter(getResources().getColor(R.color.colorAccent));
+                iNow.setColorFilter(getResources().getColor(R.color.unselected));
+                scores.setColorFilter(getResources().getColor(R.color.unselected));
+                places.setColorFilter(getResources().getColor(R.color.unselected));
+                catalogs.setColorFilter(getResources().getColor(R.color.unselected));
 
-                if(mFragment instanceof PDFragment || mFragment instanceof MadisonInfoFragment || mFragment instanceof HotelFragment || mFragment instanceof BracketFragment) {
-                    HomeFragment diningFrag = HomeFragment.newInstance(1);
-                    mFragment = diningFrag;
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container, diningFrag).commit();
-                }else if (mFragment instanceof HomeFragment){
-                    ((HomeFragment) mFragment).loadNewPage(1);
+                if (!(mFragment instanceof BlogFragment)){
+                    BlogFragment fragmentfff = BlogFragment.newInstance();
+                    mFragment = fragmentfff;
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, fragmentfff).commit();
                 }
+
             }
         });
-        madisonInfo.setOnClickListener(new View.OnClickListener() {
+        iNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                madisonInfo.setColorFilter(getResources().getColor(R.color.colorAccent));
-                weather.setColorFilter(getResources().getColor(R.color.unselected));
-                dining.setColorFilter(getResources().getColor(R.color.unselected));
-                hotels.setColorFilter(getResources().getColor(R.color.unselected));
-                bracket.setColorFilter(getResources().getColor(R.color.unselected));
+                menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_book_open_variant_grey600_48dp));
+                toolbar.setNavigationIcon(R.drawable.home);
+                iNow.setColorFilter(getResources().getColor(R.color.colorAccent));
+                scores.setColorFilter(getResources().getColor(R.color.unselected));
+                forward.setColorFilter(getResources().getColor(R.color.unselected));
+                places.setColorFilter(getResources().getColor(R.color.unselected));
+                catalogs.setColorFilter(getResources().getColor(R.color.unselected));
 
-                if (!(mFragment instanceof MadisonInfoFragment)) {
-                    MadisonInfoFragment infoFrag = MadisonInfoFragment.newInstance();
-                    mFragment = infoFrag;
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container, infoFrag).commit();
-                }
-            }
-        });
-        weather.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                weather.setColorFilter(getResources().getColor(R.color.colorAccent));
-                madisonInfo.setColorFilter(getResources().getColor(R.color.unselected));
-                dining.setColorFilter(getResources().getColor(R.color.unselected));
-                hotels.setColorFilter(getResources().getColor(R.color.unselected));
-                bracket.setColorFilter(getResources().getColor(R.color.unselected));
-
-                if(mFragment instanceof PDFragment || mFragment instanceof MadisonInfoFragment || mFragment instanceof HotelFragment || mFragment instanceof BracketFragment) {
+                if(mFragment instanceof LinksFragment || mFragment instanceof MadisonInfoFragment || mFragment instanceof HotelFragment || mFragment instanceof BracketFragment || mFragment instanceof BlogFragment) {
                     HomeFragment weatherFragment = HomeFragment.newInstance(2);
                     mFragment = weatherFragment;
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, weatherFragment).commit();
@@ -153,17 +146,36 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        scores.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_book_open_variant_grey600_48dp));
+                toolbar.setNavigationIcon(R.drawable.home);
+                scores.setColorFilter(getResources().getColor(R.color.colorAccent));
+                iNow.setColorFilter(getResources().getColor(R.color.unselected));
+                forward.setColorFilter(getResources().getColor(R.color.unselected));
+                places.setColorFilter(getResources().getColor(R.color.unselected));
+                catalogs.setColorFilter(getResources().getColor(R.color.unselected));
 
-
+                if(mFragment instanceof LinksFragment || mFragment instanceof MadisonInfoFragment || mFragment instanceof HotelFragment || mFragment instanceof BracketFragment ||mFragment instanceof BlogFragment) {
+                    HomeFragment weatherFragment = HomeFragment.newInstance(1);
+                    mFragment = weatherFragment;
+                    getSupportFragmentManager().beginTransaction().replace(R.id.container, weatherFragment).commit();
+                } else if (mFragment instanceof HomeFragment){
+                    ((HomeFragment) mFragment).loadNewPage(1);
+                }
+            }
+        });
 
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        this.menu = menu;
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        menu.getItem(0).getIcon().setColorFilter(new
-                PorterDuffColorFilter(getResources().getColor(R.color.unselected),PorterDuff.Mode.MULTIPLY));
+//        menu.getItem(0).getIcon().setColorFilter(new
+//                PorterDuffColorFilter(getResources().getColor(R.color.unselected),PorterDuff.Mode.MULTIPLY));
         return true;
     }
 
@@ -174,33 +186,51 @@ public class MainActivity extends AppCompatActivity {
         switch(item.getItemId()){
             case android.R.id.home:
 
-                weather.setColorFilter(getResources().getColor(R.color.unselected));
-                madisonInfo.setColorFilter(getResources().getColor(R.color.unselected));
-                dining.setColorFilter(getResources().getColor(R.color.unselected));
-                hotels.setColorFilter(getResources().getColor(R.color.unselected));
-                bracket.setColorFilter(getResources().getColor(R.color.unselected));
+                if (!(mFragment instanceof  BlogFragment)) {
 
-                if(mFragment instanceof PDFragment || mFragment instanceof MadisonInfoFragment || mFragment instanceof  HotelFragment || mFragment instanceof BracketFragment) {
-                    HomeFragment homeFragment = HomeFragment.newInstance(0);
 
-                    mFragment = homeFragment;
-                    getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+                    menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_book_open_variant_grey600_48dp));
+
+
+                    toolbar.setNavigationIcon(R.drawable.home_blue);
+                    Drawable icon = toolbar.getNavigationIcon();
+                    //icon.setTint(getResources().getColor(R.color.selected));
+//                    icon.setColorFilter(new
+//                            PorterDuffColorFilter(getResources().getColor(R.color.selected),PorterDuff.Mode.MULTIPLY));
+                    scores.setColorFilter(getResources().getColor(R.color.unselected));
+                    iNow.setColorFilter(getResources().getColor(R.color.unselected));
+                    forward.setColorFilter(getResources().getColor(R.color.unselected));
+                    places.setColorFilter(getResources().getColor(R.color.unselected));
+                    catalogs.setColorFilter(getResources().getColor(R.color.unselected));
+
+
+                    if (mFragment instanceof LinksFragment || mFragment instanceof MadisonInfoFragment || mFragment instanceof HotelFragment || mFragment instanceof BracketFragment || mFragment instanceof BlogFragment) {
+                        HomeFragment homeFragment = HomeFragment.newInstance(0);
+
+                        mFragment = homeFragment;
+                        getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment).commit();
+                    } else if (mFragment instanceof HomeFragment) {
+                        ((HomeFragment) mFragment).loadNewPage(0);
+                    }
+                    break;
                 }
-                else if (mFragment instanceof HomeFragment){
-                    ((HomeFragment) mFragment).loadNewPage(0);
+                else {
+                    ((BlogFragment) mFragment).refresh();
+                    break;
                 }
-                break;
 
             case R.id.info:
 
-                weather.setColorFilter(getResources().getColor(R.color.unselected));
-                madisonInfo.setColorFilter(getResources().getColor(R.color.unselected));
-                dining.setColorFilter(getResources().getColor(R.color.unselected));
-                hotels.setColorFilter(getResources().getColor(R.color.unselected));
-                bracket.setColorFilter(getResources().getColor(R.color.unselected));
+                item.setIcon(R.drawable.book_blue);
+                toolbar.setNavigationIcon(R.drawable.home);
+                scores.setColorFilter(getResources().getColor(R.color.unselected));
+                iNow.setColorFilter(getResources().getColor(R.color.unselected));
+                forward.setColorFilter(getResources().getColor(R.color.unselected));
+                places.setColorFilter(getResources().getColor(R.color.unselected));
+                catalogs.setColorFilter(getResources().getColor(R.color.unselected));
 
-                if(!(mFragment instanceof PDFragment)) {
-                    PDFragment fragment = PDFragment.newInstance();
+                if(!(mFragment instanceof LinksFragment)) {
+                    LinksFragment fragment = LinksFragment.newInstance();
 
                     mFragment = fragment;
                     getSupportFragmentManager().beginTransaction().replace(R.id.container, fragment).commit();

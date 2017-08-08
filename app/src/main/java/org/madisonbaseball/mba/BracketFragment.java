@@ -7,7 +7,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 
 /**
@@ -24,6 +27,10 @@ public class BracketFragment extends Fragment {
 
     boolean isWebviewOpen;
     public WebView mWebview;
+    ImageView middleschool;
+    ImageView highschool;
+
+    boolean highschoolActive;
 
     public BracketFragment() {
         // Required empty public constructor
@@ -43,6 +50,7 @@ public class BracketFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         ((MainActivity)getActivity()).mFragment = this;
+        highschoolActive = true;
     }
 
     @Override
@@ -52,36 +60,43 @@ public class BracketFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_bracket, container, false);
 
         mWebview = (WebView)view.findViewById(R.id.bracket_webview);
-        mWebview.loadUrl("http://challonge.com/DD20177UTournament/module");
+        mWebview.getSettings().setJavaScriptEnabled(true);
+        //mWebview.setWebChromeClient(new WebChromeClient());
+        mWebview.setWebViewClient(new WebViewClient());
+        mWebview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        mWebview.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        mWebview.getSettings().setAllowFileAccessFromFileURLs(true);
+        mWebview.loadUrl("file:///android_asset/hs2/index.html");
 
-        view.findViewById(R.id.seven).setOnClickListener(new View.OnClickListener() {
+      highschool = (ImageView) view.findViewById(R.id.highschool);
+        middleschool = (ImageView) view.findViewById(R.id.middle_school);
+        middleschool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mWebview.setVisibility(View.VISIBLE);
-                mWebview.loadUrl("http://challonge.com/DD20177UTournament/module");
+                if (highschoolActive) {
+                    highschool.setImageDrawable(getResources().getDrawable(R.drawable.hs_inactive));
+                    middleschool.setImageDrawable(getResources().getDrawable(R.drawable.msactive));
+
+                    highschoolActive = false;
+                    mWebview.loadUrl("file:///android_asset/ms2/index.html");
+
+                    //load proper thing
+                }
             }
         });
 
-        view.findViewById(R.id.nine).setOnClickListener(new View.OnClickListener() {
+        highschool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mWebview.setVisibility(View.VISIBLE);
-                mWebview.loadUrl("http://challonge.com/DD20179UTournament/module");
-            }
-        });
+                if (!highschoolActive) {
+                    highschool.setImageDrawable(getResources().getDrawable(R.drawable.hsactive));
+                    middleschool.setImageDrawable(getResources().getDrawable(R.drawable.ms_inactive));
 
-        view.findViewById(R.id.eleven).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mWebview.setVisibility(View.VISIBLE);
-                mWebview.loadUrl("http://challonge.com/DD201711UTournament/module");
-            }
-        });
-        view.findViewById(R.id.fourteen).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mWebview.setVisibility(View.VISIBLE);
-                mWebview.loadUrl("http://challonge.com/DD201714UTournament/module");
+                    mWebview.loadUrl("file:///android_asset/hs2/index.html");
+                    highschoolActive = true;
+
+                    //load proper thing
+                }
             }
         });
 
@@ -106,4 +121,6 @@ public class BracketFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
+
+
 }

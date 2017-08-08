@@ -1,0 +1,132 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="org.madisonbaseball.mba.LinksFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+   <RelativeLayout
+       android:paddingLeft="16dp"
+       android:paddingStart="16dp"
+       android:orientation="vertical"
+       android:id="@+id/steal_mine"
+       android:layout_width="match_parent"
+       android:layout_height="56dp">
+
+       <TextView
+           android:id="@+id/title1"
+           android:textColor="#677787"
+           android:textSize="22sp"
+           android:text="Steal Mine"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+       <TextView
+           android:id="@+id/subtitle1"
+           android:layout_below="@+id/title1"
+           android:textColor="#677787"
+           android:textSize="16sp"
+           android:text="A YouTube Repository for teachers"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+       <TextView
+           android:layout_alignParentBottom="true"
+           android:background="#677787"
+           android:layout_width="match_parent"
+           android:layout_height="1dp" />
+   </RelativeLayout>
+
+    <RelativeLayout
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:orientation="vertical"
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <TextView
+            android:id="@+id/title2"
+            android:textColor="#677787"
+            android:textSize="22sp"
+            android:text="District Calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/sub2"
+            android:layout_below="@+id/title2"
+            android:textColor="#677787"
+            android:textSize="16sp"
+            android:text=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:background="#677787"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pams"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp">
+
+        <TextView
+            android:id="@+id/title3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pay PAMS"
+            android:textColor="#677787"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/subtitle3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title3"
+            android:text="An app to manage student lunch accounts"
+            android:textColor="#677787"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#677787" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:paddingLeft="16dp"
+        android:paddingStart="16dp"
+        android:orientation="vertical"
+        android:id="@+id/schoold"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+
+        <TextView
+            android:id="@+id/title4"
+            android:textColor="#677787"
+            android:textSize="22sp"
+            android:text="Schoold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/subtitle4"
+            android:layout_below="@+id/title4"
+            android:textColor="#677787"
+            android:textSize="16sp"
+            android:text="A college exploration app"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_alignParentBottom="true"
+            android:background="#677787"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

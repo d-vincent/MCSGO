@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -70,8 +71,13 @@ public class HomeFragment extends Fragment {
 
         homeWebview.setWebViewClient(new WebViewClient());
         homeWebview.getSettings().setJavaScriptEnabled(true);
-        homeWebview.loadUrl("file:///android_asset/socialmedia.html");
+        homeWebview.getSettings().setJavaScriptCanOpenWindowsAutomatically(true);
+        homeWebview.getSettings().setAllowFileAccess(true);
+        homeWebview.getSettings().setDomStorageEnabled(true);
+        homeWebview.setWebChromeClient(new WebChromeClient());
+        homeWebview.loadUrl("https://www.juicer.io/api/feeds/mcs/iframe");
 
+        String heh = "<iframe src='https://www.juicer.io/api/feeds/mcs/iframe' frameborder='0' width ='100%' height='100%' style='display:block:margin:0 auto;'><iframe>";
 
 
         weatherWebview = (WebView)view.findViewById(R.id.weather_webview);

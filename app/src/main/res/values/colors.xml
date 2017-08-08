@@ -5,4 +5,5 @@
     <color name="colorAccent">#1DA1F2</color>
     <color name="unselected">#646464</color>
     <color name="selected">#F067A4</color>
+    <color name="white">#FFFFFF</color>
 </resources>
