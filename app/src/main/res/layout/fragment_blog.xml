@@ -1,11 +1,19 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="org.madisonbaseball.mba.BlogFragment">
+    
+    <ImageView
+        android:id="@+id/blog_link"
+        android:background="#677787"
+        android:src="@drawable/forwardblogimage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/blog_link"
         android:id="@+id/blog_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -25,4 +33,4 @@
 
     </ScrollView>
 
-</FrameLayout>
+</RelativeLayout>

@@ -79,7 +79,6 @@ public class BracketFragment extends Fragment {
 
                     highschoolActive = false;
                     mWebview.loadUrl("file:///android_asset/ms2/index.html");
-
                     //load proper thing
                 }
             }
@@ -105,8 +104,6 @@ public class BracketFragment extends Fragment {
 
     // TODO: Rename method, update argument and hook method into UI event
 
-
-
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -121,6 +118,4 @@ public class BracketFragment extends Fragment {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
-
-
 }

@@ -27,6 +27,7 @@ public class HomeFragment extends Fragment {
     WebView diningWebview;
     WebView bracketWebview;
     WebView weatherWebview;
+    View blogLink;
     String url;
     int mState;
 
@@ -67,6 +68,8 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
+
+
         homeWebview = (WebView) view.findViewById(R.id.home_webview);
 
         homeWebview.setWebViewClient(new WebViewClient());

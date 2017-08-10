@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity {
         places.setColorFilter(getResources().getColor(R.color.unselected));
         catalogs.setColorFilter(getResources().getColor(R.color.unselected));
 
-
         catalogs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +108,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_book_open_variant_grey600_48dp));
-                toolbar.setNavigationIcon(R.drawable.ic_refresh_grey600_48dp);
+                //toolbar.setNavigationIcon(R.drawable.ic_refresh_grey600_48dp);
 
                 forward.setColorFilter(getResources().getColor(R.color.colorAccent));
                 iNow.setColorFilter(getResources().getColor(R.color.unselected));
@@ -185,10 +184,6 @@ public class MainActivity extends AppCompatActivity {
 
         switch(item.getItemId()){
             case android.R.id.home:
-
-                if (!(mFragment instanceof  BlogFragment)) {
-
-
                     menu.getItem(0).setIcon(getResources().getDrawable(R.drawable.ic_book_open_variant_grey600_48dp));
 
 
@@ -213,11 +208,8 @@ public class MainActivity extends AppCompatActivity {
                         ((HomeFragment) mFragment).loadNewPage(0);
                     }
                     break;
-                }
-                else {
-                    ((BlogFragment) mFragment).refresh();
-                    break;
-                }
+
+
 
             case R.id.info:
 

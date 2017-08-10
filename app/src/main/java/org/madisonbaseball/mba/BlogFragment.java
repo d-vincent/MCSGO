@@ -2,6 +2,7 @@ package org.madisonbaseball.mba;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -49,6 +50,7 @@ public class BlogFragment extends Fragment {
     BlogAdapter mAdapter;
     public TextView content;
     public View holderview;
+    View blogLink;
 
 
     // TODO: Rename and change types of parameters
@@ -81,6 +83,18 @@ public class BlogFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_blog, container, false);
         blogs = new ArrayList<>();
+
+
+        //TODO This is the listener for the link to the forward blog
+        blogLink = view.findViewById(R.id.blog_link);
+        blogLink.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("URL FOR FORWARD BLOG GOES HERE"));
+                startActivity(browserIntent);
+            }
+        });
 
         mRecyclerview = (RecyclerView)view.findViewById(R.id.blog_recycler);
         mRecyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -185,6 +199,8 @@ public class BlogFragment extends Fragment {
                 blogs.clear();
 
                 for (int i = 0; i < blogPosts.length(); i++){
+
+                    //TODO this is where you'll have to do some heavy lifting to get the images to display. if you parse out object.getString("content") for the urls that will be a good start
 
                     JSONObject object = blogPosts.getJSONObject(i);
                     SimpleBlogItem item = new SimpleBlogItem();
